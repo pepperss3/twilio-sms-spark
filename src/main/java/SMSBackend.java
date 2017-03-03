@@ -55,8 +55,8 @@ public class SMSBackend {
             // Build a filter for the CallList
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("Url", url));
-            params.add(new BasicNameValuePair("To", to);
-            params.add(new BasicNameValuePair("From", from);
+            params.add(new BasicNameValuePair("To", to));
+            params.add(new BasicNameValuePair("From", from));
     
             CallFactory callFactory = client.getAccount().getCallFactory();
             Call call = callFactory.create(params);
