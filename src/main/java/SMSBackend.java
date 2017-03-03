@@ -9,6 +9,13 @@ import static spark.Spark.get;
 import static spark.Spark.post;
 import static spark.Spark.setPort;
 
+import com.twilio.sdk.TwilioRestException;
+import com.twilio.sdk.resource.factory.CallFactory;
+import com.twilio.sdk.resource.instance.Call;
+import com.twilio.sdk.resource.list.CallList;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SMSBackend {
     public static void main(String[] args) {
 
@@ -40,6 +47,20 @@ public class SMSBackend {
 
             return message.getSid();
         });
-
+        
+        post("/call", (req, res) -> {
+            String url = req.queryParams("Url");
+            String to = req.queryParams("To");
+            String from = System.getenv("From");
+            // Build a filter for the CallList
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("Url", url));
+            params.add(new BasicNameValuePair("To", to);
+            params.add(new BasicNameValuePair("From", from);
+    
+            CallFactory callFactory = client.getAccount().getCallFactory();
+            Call call = callFactory.create(params);
+            return call.getSid();
+        }
     }
 }
