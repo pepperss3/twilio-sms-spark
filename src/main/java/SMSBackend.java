@@ -61,6 +61,6 @@ public class SMSBackend {
             CallFactory callFactory = client.getAccount().getCallFactory();
             Call call = callFactory.create(params);
             return call.getSid();
-        }
+        });
     }
 }
