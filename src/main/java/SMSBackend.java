@@ -51,7 +51,7 @@ public class SMSBackend {
         post("/call", (req, res) -> {
             String url = req.queryParams("Url");
             String to = req.queryParams("To");
-            String from = System.getenv("From");
+            String from = System.getenv("TWILIO_NUMBER");
             // Build a filter for the CallList
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("Url", url));
