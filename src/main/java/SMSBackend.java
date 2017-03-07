@@ -34,7 +34,7 @@ public class SMSBackend {
 
         get("/", (req, res) -> "Hello, World");
         
-        get("/hello.xml", (req, res) -> {
+        post("/hello.xml", (req, res) -> {
             res.type("text/xml");
             String text = "<Response><Say voice=\"woman\">Hello World!</Say></Response>";
             return text;
