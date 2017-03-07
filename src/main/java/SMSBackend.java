@@ -36,7 +36,7 @@ public class SMSBackend {
         
         post("/hello.xml", (req, res) -> {
             res.type("text/xml");
-            String text = "<Response><Say voice=\"woman\">You’re receiving notifications because you’re subscribed to this repository.</Say></Response>";
+            String text = "<Response><Say voice=\"woman\" language=\"ja-JP\">こんにちは。ペッパーです。こちらは自動音声案内となります。終了します。</Say></Response>";
             return text;
         });
 
