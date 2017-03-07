@@ -33,6 +33,12 @@ public class SMSBackend {
 
 
         get("/", (req, res) -> "Hello, World");
+        
+        get("/hello", (req, res) -> {
+            res.type("text/xml");
+            String text = "<Response><Say voice=\"woman\" language=\"ja\">こんにちは</Say></Response>";
+            return text;
+        });
 
         TwilioRestClient client = new TwilioRestClient(System.getenv("TWILIO_ACCOUNT_SID"), System.getenv("TWILIO_AUTH_TOKEN"));
 
