@@ -71,11 +71,11 @@ public class SMSBackend {
             return call.getSid();
         });
         
-        Integer count = 1;
+        int count = 1;
         
         get('/webhook', (req, res) -> {
             count += 1;
-            res.send(count.toString());
+            res.send(String.valueOf(count));
         });
     }
 }
