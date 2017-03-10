@@ -70,5 +70,12 @@ public class SMSBackend {
             Call call = callFactory.create(params);
             return call.getSid();
         });
+        
+        Integer count = 1;
+        
+        get('/webhook', (req, res) -> {
+            count += 1;
+            res.send(count.toString());
+        });
     }
 }
