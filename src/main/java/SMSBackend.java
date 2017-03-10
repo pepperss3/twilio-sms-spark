@@ -75,7 +75,7 @@ public class SMSBackend {
         
         get("/webhook", (req, res) -> {
             count += 1;
-            res.send(String.valueOf(count));
+            return count;
         });
     }
 }
