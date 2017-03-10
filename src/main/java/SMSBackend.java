@@ -73,7 +73,7 @@ public class SMSBackend {
         
         int count = 1;
         
-        get('/webhook', (req, res) -> {
+        get("/webhook", (req, res) -> {
             count += 1;
             res.send(String.valueOf(count));
         });
